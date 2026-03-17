@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
     devDependencies:
       '@eslint/js':
         specifier: ^10.0.1
