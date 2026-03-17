@@ -1,0 +1,40 @@
+{
+  "name": "@nnry/eslint-config",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "types": "./src/index.d.ts"
+    }
+  },
+  "files": [
+    "src/index.js",
+    "src/index.d.ts"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.30.3",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^8.56.1",
+    "eslint": "^10.0.2",
+    "eslint-plugin-svelte": "^3.15.0",
+    "globals": "^17.3.0",
+    "svelte": "^5.53.5",
+    "svelte-eslint-parser": "^1.5.1",
+    "tsup": "^8.5.1",
+    "typescript-eslint": "^8.56.1"
+  },
+  "dependencies": {
+    "typescript": "^5.9.3"
+  }
+}
