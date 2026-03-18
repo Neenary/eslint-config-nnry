@@ -62,7 +62,6 @@ export const base = defineConfig([
     },
   },
   ...tseslint.configs.recommended,
-  ...eslintPluginSvelte.configs['flat/base'],
   {
     plugins: {
       '@stylistic': stylistic,
@@ -79,6 +78,7 @@ export const browser = defineConfig([
 ]);
 
 export const svelte = defineConfig([
+  ...eslintPluginSvelte.configs['flat/base'],
   {
     files: ['**/*.svelte', '*.svelte'],
     rules: svelteRules,
