@@ -1,15 +1,11 @@
 // @ts-check
 import pluginJs from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
-import tsparser from '@typescript-eslint/parser';
-import eslintPluginSvelte from 'eslint-plugin-svelte';
 import globals from 'globals';
-import svelteParser from 'svelte-eslint-parser';
 import tseslint from 'typescript-eslint';
 import { defineConfig } from 'eslint/config';
 /**
  * @typedef {import('eslint/rules/stylistic-issues').StylisticIssues} StylisticIssues
- * @typedef {import('eslint-plugin-svelte/lib/rule-types').RuleOptions} SvelteRulesOptions
  * @typedef {{ [K in keyof StylisticIssues as `@stylistic/${K}`]: StylisticIssues[K] }} StylisticRules
  * @typedef {import('eslint/rules/possible-errors').PossibleErrors} PossibleErrors
  * @typedef {import('eslint/rules/best-practices').BestPractices} BestPractices
@@ -45,13 +41,6 @@ const tsRules = {
   ],
 };
 
-/** @type {Partial<SvelteRulesOptions>} */
-const svelteRules = {
-  'svelte/indent': ['error', {
-    indent: 2,
-  }],
-};
-
 /** @type {import('eslint').Linter.Config[]} */
 export const base = defineConfig([
   {
@@ -77,25 +66,9 @@ export const browser = defineConfig([
   ...base,
 ]);
 
-export const svelte = defineConfig([
-  ...eslintPluginSvelte.configs['flat/base'],
-  {
-    files: ['**/*.svelte', '*.svelte'],
-    rules: svelteRules,
-    languageOptions: {
-      parser: svelteParser,
-      parserOptions: {
-        parser: tsparser,
-      },
-    },
-  },
-  ...base,
-]);
-
 export const configs = {
   base,
   browser,
-  svelte,
 };
 
 export const nnrylint = {

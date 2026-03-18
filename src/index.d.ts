@@ -1,14 +1,11 @@
 import type { Linter } from 'eslint';
 
-type Flat = Linter.FlatConfig;
-
-export declare const base: Flat[];
-export declare const browser: Flat[];
+export declare const base: Linter.Config[];
+export declare const browser: Linter.Config[];
 
 export declare const configs: {
-  base: Flat[];
-  browser: Flat[];
-  svelte: Flat[];
+  base: Linter.Config[];
+  browser: Linter.Config[];
 };
 
 export declare const nnrylint: {
