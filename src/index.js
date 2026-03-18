@@ -69,6 +69,16 @@ export const base = defineConfig([
     },
     rules: stylisticRules,
   },
+]);
+
+export const browser = defineConfig([
+  {
+    languageOptions: { globals: globals.browser }
+  },
+  ...base,
+]);
+
+export const svelte = defineConfig([
   {
     files: ['**/*.svelte', '*.svelte'],
     rules: svelteRules,
@@ -79,18 +89,13 @@ export const base = defineConfig([
       },
     },
   },
-]);
-
-export const browser = defineConfig([
-  {
-    languageOptions: { globals: globals.browser }
-  },
   ...base,
 ]);
 
 export const configs = {
   base,
   browser,
+  svelte,
 };
 
 export const nnrylint = {

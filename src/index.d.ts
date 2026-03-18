@@ -8,6 +8,7 @@ export declare const browser: Flat[];
 export declare const configs: {
   base: Flat[];
   browser: Flat[];
+  svelte: Flat[];
 };
 
 export declare const nnrylint: {
