@@ -1,6 +1,6 @@
 // @ts-check
 import pluginJs from '@eslint/js';
-import stylistic from '@stylistic/eslint-plugin';
+import stylisticEslint from '@stylistic/eslint-plugin';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import { defineConfig } from 'eslint/config';
@@ -42,6 +42,16 @@ const tsRules = {
 };
 
 /** @type {import('eslint').Linter.Config[]} */
+export const stylistic = [
+  {
+    plugins: {
+      '@stylistic': stylisticEslint,
+    },
+    rules: stylisticRules,
+  },
+];
+
+/** @type {import('eslint').Linter.Config[]} */
 export const base = defineConfig([
   {
     rules: {
@@ -51,12 +61,7 @@ export const base = defineConfig([
     },
   },
   ...tseslint.configs.recommended,
-  {
-    plugins: {
-      '@stylistic': stylistic,
-    },
-    rules: stylisticRules,
-  },
+  ...stylistic,
 ]);
 
 export const browser = defineConfig([
@@ -69,6 +74,7 @@ export const browser = defineConfig([
 export const configs = {
   base,
   browser,
+  stylistic,
 };
 
 export const nnrylint = {
