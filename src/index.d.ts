@@ -6,6 +6,7 @@ export declare const browser: Linter.Config[];
 export declare const configs: {
   base: Linter.Config[];
   browser: Linter.Config[];
+  stylistic: Linter.Config[];
 };
 
 export declare const nnrylint: {
